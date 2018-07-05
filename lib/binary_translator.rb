@@ -1,4 +1,7 @@
 class BinaryTranslator
+
+  attr_accessor :alpha_to_binary
+
   def initialize
     @alpha_to_binary = {
       "a" => "000001",
@@ -26,7 +29,16 @@ class BinaryTranslator
       "w" => "010111",
       "x" => "011000",
       "y" => "011001",
-      "z" => "011010"
+      "z" => "011010",
+      " " => "000000"
     }
+  end
+
+  def translate(string)
+    char_array = string.chars
+    char_array.map! do |char|
+      @alpha_to_binary[char.downcase]
+    end
+    char_array.join
   end
 end
