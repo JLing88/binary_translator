@@ -13,7 +13,10 @@ class BinaryTranslatorTest < Minitest::Test
     bt = BinaryTranslator.new
     actual = bt.translate("a")
     expected = "000001"
+    assert_equal expected, actual
 
+    actual = bt.translate("b")
+    expected = "000010"
     assert_equal expected, actual
 
   end
