@@ -1,3 +1,5 @@
+require 'pry'
+
 class BinaryTranslator
 
   attr_accessor :alpha_to_binary
@@ -34,6 +36,12 @@ class BinaryTranslator
   end
 
   def translate(string)
-      @alpha_to_binary[string]
+    char_array = string.split
+    new_array = []
+    new_array = char_array.map do |char|
+      @alpha_to_binary[char.downcase]
+    end
+    new_array.join
   end
+
 end
