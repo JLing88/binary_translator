@@ -31,15 +31,15 @@ class BinaryTranslator
       "w" => "010111",
       "x" => "011000",
       "y" => "011001",
-      "z" => "011010"
+      "z" => "011010",
+      " " => "000000"
     }
   end
 
   def translate(string)
     char_array = string.split
-    new_array = []
-    new_array = char_array.map do |char|
-      @alpha_to_binary[char.downcase]
+    new_array = char_array.map! do |char|
+      char = @alpha_to_binary[char.downcase]
     end
     new_array.join
   end

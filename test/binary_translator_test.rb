@@ -19,6 +19,7 @@ class BinaryTranslatorTest < Minitest::Test
     actual = bt.translate("b")
     expected = "000010"
     assert_equal expected, actual
+
   end
 
   def test_translate_gives_correct_output_for_multiple_chars
@@ -27,6 +28,33 @@ class BinaryTranslatorTest < Minitest::Test
     expected = "010100010101010010001001001110000111"
     assert_equal expected, actual
 
+  end
+
+  def test_translate_gives_correct_output_for_single_UPCASE_chars
+    bt = BinaryTranslator.new
+    actual = bt.translate("A")
+    expected = "000001"
+    assert_equal expected, actual
+
+    actual = bt.translate("B")
+    expected = "000010"
+    assert_equal expected, actual
+
+  end
+
+  def test_translate_gives_correct_output_for_multiple_UPCASE_chars
+    bt = BinaryTranslator.new
+    actual = bt.translate("TURING")
+    expected = "010100010101010010001001001110000111"
+    assert_equal expected, actual
+
+  end
+
+  def test_if_spaces_are_tranlated_correctly
+    bt = BinaryTranslator.new
+    actual = bt.translate("a b")
+    expected = "000001000000000010"
+    assert_equal expected, actual 
   end
 
 
