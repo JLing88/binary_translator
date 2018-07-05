@@ -1,7 +1,6 @@
 require "minitest/autorun"
 require "minitest/pride"
 require "./lib/binary_translator"
-require "pry"
 
 class BinaryTranslatorTest < Minitest::Test
 
@@ -50,11 +49,11 @@ class BinaryTranslatorTest < Minitest::Test
 
   end
 
-  def test_if_spaces_are_tranlated_correctly
+  def test_if_spaces_are_translated_correctly
     bt = BinaryTranslator.new
     actual = bt.translate("a b")
     expected = "000001000000000010"
-    assert_equal expected, actual 
+    assert_equal expected, actual
   end
 
 
