@@ -1,4 +1,7 @@
 class BinaryTranslator
+
+  attr_accessor :alpha_to_binary
+
   def initialize
     @alpha_to_binary = {
       "a" => "000001",
@@ -28,5 +31,9 @@ class BinaryTranslator
       "y" => "011001",
       "z" => "011010"
     }
+  end
+
+  def translate(string)
+      @alpha_to_binary[string]
   end
 end
