@@ -56,5 +56,19 @@ class BinaryTranslatorTest < Minitest::Test
     assert_equal expected, actual
   end
 
+  def test_translate_skips_symbols
+    bt = BinaryTranslator.new
+    actual = bt.translate("a*&^b")
+    expected = "000001000010"
+    assert_equal expected, actual
+  end
+
+  def test_binary_to_text
+    bt = BinaryTranslator.new
+    actual = bt.translate_to_text("001000000101001100001100001111000000010111001111010010001100000100")
+    expected = "hello world"
+    assert_equal expected, actual
+  end
+
 
 end
