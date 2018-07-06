@@ -46,11 +46,11 @@ class BinaryTranslator
 
   def translate_to_text(string)
     new_hash = @alpha_to_binary.invert
-    new_array = string.scan(/.{6}/)
-    new_array.map! do |binary|
+    binary_array = string.scan(/.{6}/)
+    binary_array.map! do |binary|
       new_hash[binary]
     end
-    new_array.join
+    binary_array.join
 
   end
 end
